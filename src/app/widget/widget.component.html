@@ -1,20 +1,24 @@
 <div class="widget">
   <div class="widget__images">
-    <div class="widget__single-image"></div>
-    <div class="widget__single-image"></div>
-    <div class="widget__single-image"></div>
+    <div
+      class="widget__image-frame widget__image-frame_big"
+      *ngFor="let image of widget.images">
+      <img [src]="image" alt="image" class="widget__picture">
+    </div>
   </div>
-  <h4 class="widget__title">Интересные каналы про лалаала</h4>
+  <h4 class="widget__title">{{ widget.title }}</h4>
   <p class="widget__info">
     Создатель
-    <a class="widget__link">dfdsfdsfs</a>
+    <a class="widget__link">{{ widget.author }}</a>
   </p>
   <div class="widget__followers">
     <p class="widget__info">Отслеживают</p>
     <div class="widget__follower-images">
-      <div class="widget__single-follower-image"></div>
-      <div class="widget__single-follower-image"></div>
-      <div class="widget__single-follower-image"></div>
+      <div
+        class="widget__image-frame widget__image-frame_small"
+        *ngFor="let fImage of widget.followerImages">
+        <img [src]="fImage" alt="image" class="widget__picture">
+      </div>
     </div>
   </div>
   <button class="widget__button">

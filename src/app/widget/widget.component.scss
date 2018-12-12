@@ -12,11 +12,8 @@ $blue: #4194D9;
     justify-content: space-between;
   }
 
-  &__single-image {
-    width: 85px;
-    height: 85px;
-    background-color: grey;
-    border-radius: 50%;
+  &__picture {
+    width: 100%;
   }
 
   &__title {
@@ -46,11 +43,20 @@ $blue: #4194D9;
     align-items: center;
   }
 
-  &__single-follower-image {
-    @extend .widget__single-image;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+  &__image-frame {
+    border-radius: 50%;
+    overflow: hidden;
+
+    &_big {
+      width: 85px;
+      height: 85px;
+    }
+
+    &_small {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
   }
 
   &__star {

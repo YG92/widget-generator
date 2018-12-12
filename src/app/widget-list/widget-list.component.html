@@ -1,3 +1,8 @@
 <div class="widget-list">
-  <app-widget class="widget-list__item"></app-widget>
+  <button (click)="generateWidget()">Добавить виджет</button>
+  <app-widget
+    class="widget-list__item"
+    *ngFor="let widget of widgetList"
+    [widget]="widget">
+  </app-widget>
 </div>
