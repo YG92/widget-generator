@@ -18,7 +18,7 @@ export class WidgetListComponent implements OnInit {
 
   generateWidget() {
     const widget = this.widgetSrv.generageRandomObject();
-    this.widgetList = [widget, ...this.widgetList];
+    this.widgetList = [...this.widgetList, widget];
   }
 
 }
