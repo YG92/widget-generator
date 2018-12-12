@@ -1,0 +1,53 @@
+.widget {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  background-color: #fff;
+  padding: 20px;
+
+  &__images {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__single-image {
+    width: 80px;
+    height: 80px;
+    background-color: grey;
+    border-radius: 50%;
+  }
+
+  &__title {
+    margin: 15px 0 7px;
+
+    &:hover {
+      color: #4194D9;
+    }
+  }
+
+  &__link {
+    color: #4194D9;
+    text-decoration: underline;
+  }
+
+  &__info {
+    font-size: 12px;
+    color: grey;
+    margin: 5px 0;
+  }
+  
+  &__button {
+    height: 31px;
+    background-color: #3160BF;
+    align-self: flex-end;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+}
