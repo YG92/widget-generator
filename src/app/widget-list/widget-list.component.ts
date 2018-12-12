@@ -16,8 +16,8 @@ export class WidgetListComponent implements OnInit {
   ngOnInit() {
   }
 
-  generateWidget() {
-    const widget = this.widgetSrv.generageRandomObject();
+  generateWidget(): void {
+    const widget = this.widgetSrv.generateRandomObject();
     this.widgetList = [...this.widgetList, widget];
   }
 

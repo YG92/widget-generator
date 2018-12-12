@@ -19,7 +19,7 @@ export class WidgetService {
     return randomData[key][index];
   }
 
-  generageRandomObject(): WidgetModel {
+  generateRandomObject(): WidgetModel {
     return {
       images: Array.from({ length: 3 }, () => this.getRandomValue('images')),
       title: this.getRandomValue('titles'),
