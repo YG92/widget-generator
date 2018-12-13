@@ -21,8 +21,12 @@
       </div>
     </div>
   </div>
-  <button class="widget__button">
-    <i class="fas fa-star widget__star"></i>
+  <button *ngIf="!inFavorites" class="widget__button widget__button_state_not-in-favorites" (click)="inFavorites = true">
+    <i class="fas fa-star widget__icon"></i>
     <span>Добавить в избранное</span>
+  </button>
+  <button *ngIf="inFavorites" class="widget__button widget__button_state_in-favorites">
+    <i class="far fa-check-circle widget__icon"></i>
+    <span>В избранном</span>
   </button>
 </div>

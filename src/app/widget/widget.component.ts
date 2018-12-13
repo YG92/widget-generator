@@ -9,6 +9,7 @@ import { WidgetModel } from '../widget.model';
 export class WidgetComponent implements OnInit {
 
   @Input() widget: WidgetModel;
+  inFavorites = false;
 
   constructor() { }
 

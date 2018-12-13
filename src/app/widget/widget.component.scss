@@ -59,14 +59,23 @@ $blue: #4194D9;
     }
   }
 
-  &__star {
+  &__icon {
     font-size: 14px;
     margin-right: 7px;
   }
   
   &__button {
     margin-top: 10px;
-    background: linear-gradient(to right, #4b32d4, $blue);
     align-self: flex-end;
+
+    &_state_not-in-favorites {
+      background: linear-gradient(to right, #4b32d4, $blue);
+    }
+
+    &_state_in-favorites {
+      background-color: white;
+      border: 1px solid $blue;
+      color: $blue;
+    }
   }
 }
