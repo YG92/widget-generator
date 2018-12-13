@@ -16,4 +16,10 @@ export class WidgetComponent implements OnInit {
   ngOnInit() {
   }
 
+  get followersLeft(): number {
+    const followers = this.widget.followers;
+    if (followers.number === 0) return 0;
+    return followers.number > 5 ? followers.number - 5 : null;
+  }
+
 }

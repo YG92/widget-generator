@@ -2,5 +2,5 @@ export class WidgetModel {
   images: string[];
   title: string;
   author: string;
-  followerImages: string[];
+  followers: { number: number, images: string[] }
 }

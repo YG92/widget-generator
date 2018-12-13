@@ -19,12 +19,20 @@ export class WidgetService {
     return randomData[key][index];
   }
 
+  private createArray(length: number, key: string): string[] {
+    return Array.from({ length }, () => this.getRandomValue(key))
+  }
+
   generateRandomObject(): WidgetModel {
+    const followersNumber = this.getRandInt(1000);
     return {
-      images: Array.from({ length: 3 }, () => this.getRandomValue('images')),
+      images: this.createArray(3, 'images'),
       title: this.getRandomValue('titles'),
       author: this.getRandomValue('names'),
-      followerImages: Array.from({ length: this.getRandInt(5) + 1 }, () => this.getRandomValue('images'))
+      followers: {
+        number: followersNumber,
+        images: this.createArray(followersNumber > 5 ? 5 : followersNumber, 'images')
+      }
     }
   }
 }
