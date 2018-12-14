@@ -14,11 +14,12 @@ export class WidgetListComponent implements OnInit {
   constructor(private widgetSrv: WidgetService) { }
 
   ngOnInit() {
+    this.widgetSrv.widgetsChanged.subscribe((widgets: WidgetModel[]) => this.widgetList = widgets);
+    this.widgetList = this.widgetSrv.getWidgets();
   }
 
   generateWidget(): void {
-    const widget = this.widgetSrv.generateRandomObject();
-    this.widgetList = [...this.widgetList, widget];
+    this.widgetSrv.addWidget();
   }
 
 }

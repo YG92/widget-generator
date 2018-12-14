@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { WidgetService } from '../widget-service/widget.service';
 import { WidgetModel } from '../widget.model';
 
 @Component({
@@ -9,17 +10,20 @@ import { WidgetModel } from '../widget.model';
 export class WidgetComponent implements OnInit {
 
   @Input() widget: WidgetModel;
-  inFavorites = false;
 
-  constructor() { }
+  constructor(private widgetSrv: WidgetService) { }
 
   ngOnInit() {
   }
 
   get followersLeft(): number {
-    const followers = this.widget.followers;
-    if (followers.number === 0) return 0;
-    return followers.number > 5 ? followers.number - 5 : null;
+    const followersNum = this.widget.followers.number;
+    return followersNum === 0 || followersNum > 5 ? followersNum : null;
+  }
+
+  updateWidgetStatus(): void {
+    this.widget.inFavorites = true;
+    this.widgetSrv.updateWidgetStatus(this.widget);
   }
 
 }

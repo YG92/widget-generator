@@ -22,11 +22,11 @@
       <span *ngIf="followersLeft !== null" class="widget__info"> ... ({{ followersLeft }})</span>
     </div>
   </div>
-  <button *ngIf="!inFavorites" class="widget__button widget__button_state_not-in-favorites" (click)="inFavorites = true">
+  <button *ngIf="!widget.inFavorites" class="widget__button widget__button_state_not-in-favorites" (click)="updateWidgetStatus()">
     <i class="fas fa-star widget__icon"></i>
     <span>Добавить в избранное</span>
   </button>
-  <button *ngIf="inFavorites" class="widget__button widget__button_state_in-favorites">
+  <button *ngIf="widget.inFavorites" class="widget__button widget__button_state_in-favorites">
     <i class="far fa-check-circle widget__icon"></i>
     <span>В избранном</span>
   </button>
